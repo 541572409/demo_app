@@ -3,7 +3,9 @@
 <head>
   <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
   <%= csrf_meta_tags %>
-  <%= render 'layouts/stylesheets' %>
+
+  <%= render 'layouts/stylesheets1' %>
+
 </head>
 <body>
   <div class="container">
