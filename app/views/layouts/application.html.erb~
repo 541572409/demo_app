@@ -3,11 +3,7 @@
 <head>
   <title>Ruby on Rails Tutorial Sample App | <%= @title %></title>
   <%= csrf_meta_tags %>
-
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>
-  <%= stylesheet_link_tag 'blueprint/print', :media => 'print' %>
-  <%= stylesheet_link_tag 'custom', :media => 'screen' %>
-
+  <%= render 'layouts/stylessheets' %>
 </head>
 <body>
   <div class="container">
