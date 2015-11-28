@@ -1,13 +1,13 @@
 DemoApp::Application.routes.draw do
-  #   get "pages/home"
-  match 'home', :to => 'pages#home'
-  #   get "pages/contact"
-  match 'contact', :to => 'pages#contact'
-  #   get "pages/about"
-  match 'about', :to => 'pages#about'
-  #   get "pages/help"
-  match 'help', :to => 'pages#help'
+  resources :sessions, :only => [:new, :create, :destroy]
+  match '/signin', :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
+
   match '/signup', :to => 'users#new'
+  match 'home', :to => 'pages#home'
+  match 'contact', :to => 'pages#contact'
+  match 'about', :to => 'pages#about'
+  match 'help', :to => 'pages#help'
   root :to => 'pages#home'
 
   resources :users
