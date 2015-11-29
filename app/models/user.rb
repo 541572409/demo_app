@@ -1,4 +1,9 @@
+# Need the digest libary for hash calculation.
+require 'digest'
+
 class User < ActiveRecord::Base
+  # Create a virtual attribute "password"
+  # A virtual attribute is an attribute not corresponding to a column in DB.
   attr_accessor :password
   attr_accessible :email, :name, :password, :password_confirmation
 
@@ -10,8 +15,10 @@ class User < ActiveRecord::Base
             :format => { :with => email_regex},
             :uniqueness => { :case_sensitive => false }
 
+  # Add validations to the "password" attribute.
+  # Also automatically create the virtual attribute "password_cinfirmation".
   validates :password, :presence => true,
-			:confirmation => true,
+			:confirmation => true, # create "password_confirmation"
 			:length => { :within => 6..40}
 
   before_save :encrypt_password
