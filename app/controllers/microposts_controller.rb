@@ -1,6 +1,6 @@
 class MicropostsController < ApplicationController
-  before_filter : authenticate, :only => [:create, :destroy]
-  before_filter : authorized_user, :only => [:destroy]
+  before_filter :authenticate, :only => [:create, :destroy]
+  before_filter :authorized_user, :only => [:destroy]
 
   private
 
@@ -22,7 +22,7 @@ class MicropostsController < ApplicationController
   def create
     @micropost = current_user.microposts.build(params[:micropost])
     if @micropost.save
-      flashP[:success] = "Micropost crested!"
+      flash[:success] = "Micropost crested!"
       redirect_to root_path
     else
       render 'pages/home'
