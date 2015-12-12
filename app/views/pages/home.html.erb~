@@ -6,7 +6,22 @@
 
   <table class="front">
     <tr>
-    <td class="main">
-      <h1 class="micropost">What's up?</h2>
+      <td class="main">
+        <h1 class="micropost">What's up?</h2>
+        <%= form_for(@micropost) do |f| %>
+          <div class="field">
+            <%= f.text_area :content %>
+          </div>
+          <div class="actions">
+            <%= f.submit "Submit" %>
+          </div>
+        <% end %>
+      <td class="sidebar round">
+        <a href="<%= user_path(current_user) %>"><%= current_user.name %></a>
+        <br />Microposts: <%= current_user.microposts.count %>
+      </td>
+    </tr>
+  </table>
+<% end %>
         
 <%= link_to "Show all users", users_path %>
