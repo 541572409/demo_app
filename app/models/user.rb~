@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :email, :name, :password, :password_confirmation
 
+  has_many :microposts, :dependent => :destory
+
   validates :name, :presence => true, 
             :length => { :maximum => 50 }
 
@@ -41,7 +43,6 @@ class User < ActiveRecord::Base
     end
 
     def encrypt(string)
-      #Digest::SHA2.hexdigest(string)
-      string
+      Digest::SHA2.hexdigest(string)
     end
 end
