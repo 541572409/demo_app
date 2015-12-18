@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: https://ruby.taobao.org/
   specs:
     actionmailer (3.2.16)
       actionpack (= 3.2.16)
@@ -123,6 +123,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -137,3 +138,4 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   sqlite3
   uglifier (>= 1.0.3)
+  will_paginate

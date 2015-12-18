@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-#source 'https://ruby.taobao.org'
+#source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 gem 'rails', '3.2.16'
 
@@ -16,6 +16,7 @@ group :development, :test do
 end
 
 gem 'faker'
+gem 'will_paginate'
 
 # Gems used only for assets and not required
 # in production environments by default.
